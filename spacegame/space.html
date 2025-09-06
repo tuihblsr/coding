@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Yet another space game.</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <title>Darkness Intro</title>
+  <link rel="stylesheet" href="space.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="sidebar">
-            <div>Credits: <span id="creditDisplay">0</span></div>
-            <div>Ore: <span id="oreDisplay">0</span></div>
-            <div>Food: <span id="foodDisplay">0</span></div>
-        </div>
+  <!-- Prologue Screen -->
+  <div id="prologue" class="screen active">
+    <div class="dialog-box">
+      <h2>DARKNESS</h2>
+      <p>You wake up alone in the darkness, far below sunlight. You are injured and you remember very little. Is this how your journey ends?</p>
+      <button id="continueBtn">continue</button>
+    </div>
+  </div>
 
-        <div class="main">
-            <div class="tabs">
-                <div class="tab active" data-target="station-content">Station</div>
-                <div class="tab" data-target="lore-content">Lore</div>
-                <div class="tab" data-target="setting-content" style="margin-left:auto;">Settings</div>
-            </div>
-
-            <div class="content">
-                <div id="station-content" class="active">
-                    
-                </div>
-                <div id="lore-content">
-                    <p>Work in progress!</p>
-                </div>
-                <div id="setting-content">
-                    <p>Hello world!</p>
-                </div>
-            </div>
-        </div>
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen">
+    <div class="sidebar">
+      <p>a few seconds ago<br>You are alone in a massive dark corridor, far below sunlight.</p>
     </div>
 
-<script rel="text/javascript" src="index.js"></script>
+    <div class="level">LEVEL 13</div>
+
+    <div class="dark-area">
+      <h3>DARK AREA</h3>
+      <p>A quiet street or corridor. Details fade in the darkness. There is no <strong>light</strong>.</p>
+      <p>Resources found: ?</p>
+      <button>get up</button>
+    </div>
+  </div>
+
+  <script src="space.js"></script>
 </body>
 </html>
