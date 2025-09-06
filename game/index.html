@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows!</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- UI Elements -->
+    <div class="saveBox">
+        <button><a>Save</a></button>
+        <button><a>Load</a></button>
+        <p id="dayCounter"></p>
+    </div>
+
+    <div class="imageBox">
+        <button><img src="stickman.png" alt="stickman"></button>
+    </div>
+
+    <div class="generatorBox"><p>Generators:</p></div>
+
+    <div class="resourceBox">
+        <p>Resources:</p>
+        <button>
+            <p>Glass:</p>
+            <p><span id="glassDisplay">0</span></p>
+        </button>
+        <button>
+            <p>Windows:</p>
+            <p><span id="windowsDisplay">0</span></p>
+        </button>
+    </div>
+
+    <div class="conversionRates">
+        <p>Conversion Rates:</p>
+        <button>
+            <p>Glass -> Windows</p>
+            <p id="glassToWindowsDisplay">1 -> 1</p>
+        </button>
+    </div>
+
+    <!-- Only ONE script included now -->
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

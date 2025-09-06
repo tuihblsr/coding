@@ -1,0 +1,112 @@
+body {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+  
+a {
+    text-decoration: underline;
+    color: inherit;
+    cursor: pointer;
+}
+
+.saveBox {
+    display: flex;
+    gap: 10px;
+}
+.saveBox button {
+    background-color: white;
+    font-family: inherit;
+    display: inline-block;
+    vertical-align: top;
+    min-width: 48px;
+    min-height: 20px;
+    margin: 5px;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    padding: 4px;
+}
+
+.imageBox {
+    border: 2px solid black;
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: 150px;
+    /* left: 75px; */
+}
+.imageBox button {
+    all: unset;
+    cursor: pointer;
+}
+
+.generatorBox {
+    position: absolute;
+    top: 175px;
+    left: 165px;
+}
+.generatorBox button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    background-color: #c8c8c8;
+    min-height: 66px;
+    min-width: 130px;
+    border: 1px solid;
+    padding: 0 4px 4px 4px;
+    line-height: 1;
+    margin-bottom: 8px;
+    margin-right: 10px;
+}
+.generatorBox button p {
+    margin: 0;
+    padding: 0;
+}
+
+.resourceBox {
+    position: absolute;
+    top: 150px;
+    left: 1000px;
+}
+.resourceBox button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    background-color: black;
+    color: white;
+    min-height: 40px;
+    min-width: 130px;
+    border: 1px solid grey;
+    padding: 0 4px 4px 4px;
+    line-height: 1;
+}
+.resourceBox button p {
+    margin: 0;
+    padding: 0;
+}
+
+.conversionRates {
+    position: absolute;
+    top: 350px;
+    left: 1000px;
+}
+.conversionRates button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    background-color: #c8c8c8;
+    min-height: 40px;
+    min-width: 130px;
+    border: 1px solid;
+    padding: 0 4px 4px 4px;
+    line-height: 1;
+    margin-bottom: 8px;
+    margin-right: 10px;
+}
+.conversionRates button p {
+    margin: 0;
+    padding: 0;
+}
