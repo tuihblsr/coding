@@ -1,9 +1,10 @@
 const prologue = document.getElementById('prologue');
 const gameScreen = document.getElementById('game-screen');
-const continueBtn = document.getElementById('continueBtn');
 const topBar = document.getElementById('top-bar');
 const log = document.getElementById('log');
 
+const continueBtn = document.getElementById('continue-btn');
+const getUpButton = gameScreen.querySelector('get-up-btn');
 
 function addLog(message) {
     const entry = document.createElement('p');
@@ -14,6 +15,25 @@ function addLog(message) {
     } else {
         log.prepend(entry);
     }
+}
+
+function animateButton(button, duration, onComplete) {
+	let start = null;
+
+	function animate(timestamp) {
+		if (!start) start = timestamp;
+		let progress = Math.min((timestamp - start) / duration, 1);
+
+		button.style.background = `conic-gradient(rgba(245, 197, 24, 0.4) ${progress * 360}deg, transparent 0deg)`;
+		
+		if (progress < 1) {
+			requestAnimationFrame(animate);
+		} else {
+			if (onComplete) onComplete(button);
+		}
+	}
+
+	requestAnimationFrame(animate);
 }
 
 // Prologue "continue"
@@ -35,27 +55,11 @@ continueBtn.addEventListener('click', () => {
     }, 1000);
 });
 
-const getUpButton = gameScreen.querySelector('button');
-
-getUpButton.addEventListener('click', () => {
-  getUpButton.disabled = true;
-  const duration = 1500; 
-  let start = null;
-
-  function animate(timestamp) {
-    if (!start) start = timestamp;
-    let progress = Math.min((timestamp - start) / duration, 1);
-
-    getUpButton.style.background = `conic-gradient(rgba(245,197,24,0.4) ${progress * 360}deg, transparent 0deg)`;
-
-    if (progress < 1) {
-      requestAnimationFrame(animate);
-    } else {
-      addLog("You get up slowly, pain shooting through your side.");
-      getUpButton.textContent = 'You got up!';
-      getUpButton.disabled = true;
-    }
-  }
-
-  requestAnimationFrame(animate);
+getUpButton.addEventListener("click", () => {
+	getUpButton.disabled = true;
+	animateButton(getUpButton, 1500, (btn) => {
+		addLog("You get up slowly, pain shooting through your side.");
+    	btn.textContent = 'You got up!';
+    	btn.disabled = true;
+	});
 });
