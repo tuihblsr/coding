@@ -4,7 +4,7 @@ const topBar = document.getElementById('top-bar');
 const log = document.getElementById('log');
 
 const continueBtn = document.getElementById('continue-btn');
-const getUpButton = gameScreen.querySelector('get-up-btn');
+const getUpButton = document.getElementById('get-up-btn');
 
 function addLog(message) {
     const entry = document.createElement('p');
