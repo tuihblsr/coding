@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Get Up Button with Progress</title>
+<style>
+  body {
+    background: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px;
+  }
+
+  #get-up-btn {
+    position: relative;
+    padding: 12px 40px;
+    font-size: 16px;
+    cursor: pointer;
+    background: transparent;
+    border: 2px solid #555;
+    color: #f5c518;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  #get-up-btn:hover:not([disabled]) {
+    background-color: #262626;
+    border-color: #888;
+  }
+
+  /* The progress fill inside the button */
+  #get-up-btn .progress-fill {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 0%;
+    background-color: rgba(245, 197, 24, 0.4);
+    transition: width 0.1s linear;
+    z-index: 0;
+  }
+
+  /* The button text is above the fill */
+  #get-up-btn span {
+    position: relative;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<h3>Need a title</h3>
+<p>Also kinda need flavour text</p>
+<p>Resources found: ?</p>
+
+<button id="get-up-btn" aria-label="Get up button">
+  <div class="progress-fill"></div>
+  <span>Get Up</span>
+</button>
+
+<script>
+  const btn = document.getElementById('get-up-btn');
+  const fill = btn.querySelector('.progress-fill');
+  const text = btn.querySelector('span');
+  const duration = 1500; // milliseconds (1.5 seconds)
+  
+  btn.addEventListener('click', () => {
+    btn.disabled = true;  // Disable button during progress
+    fill.style.width = '0%';
+    text.textContent = 'Getting up... 0%';
+    
+    let start = null;
+
+    function animate(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      fill.style.width = (progress * 100) + '%';
+      text.textContent = `Getting up... ${Math.floor(progress * 100)}%`;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        // Progress complete, reset button text and re-enable if needed
+        text.textContent = 'You got up!';
+        // Do whatever "get up" logic you want here
+        console.log("You get up slowly, pain shooting through your side.");
+        // Optionally re-enable button after a delay or leave disabled
+        setTimeout(() => {
+          text.textContent = 'Get Up';
+          fill.style.width = '0%';
+          btn.disabled = false;
+        }, 2000);
+      }
+    }
+    requestAnimationFrame(animate);
+  });
+</script>
+
+</body>
+</html>
