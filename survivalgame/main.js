@@ -30,7 +30,7 @@ continueBtn.addEventListener('click', () => {
             topBar.classList.add('visible');
             log.classList.add('visible');
 
-            addLog("You are alone in a massive dark corridor, far below sunlight.");
+            addLog("need flavour text");
         }, 10);
     }, 1000);
 });
