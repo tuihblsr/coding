@@ -9,31 +9,37 @@
 
     <!-- Resource + Level Bar -->
     <div id="top-bar">
-    <div id="resources"><img src="images/food.png" alt="food"> 0 <img src="images/water.png" alt="water"> 0</div>
-    <div id="level" class="flicker">LEVEL 0</div>
+        <div id="resources"><img src="images/food.png" alt="food"> 0 <img src="images/water.png" alt="water"> 0</div>
+        <div id="level" class="flicker">LEVEL 0</div>
     </div>
 
     <!-- Event Log -->
-    <div id="log">
-    </div>
+    <div id="log"></div>
 
     <!-- Prologue Screen -->
     <div id="prologue" class="screen active">
-    <div class="dialog-box">
-        <h2>THE BACKROOMS</h2>
-        <p>If you're not careful and no-clip out of reality in wrong areas, you'll end up in the Backrooms, where it's nothing but the stink of moist carpet, the madness of mono-yellow, and endless background noise of fluorescent lights at maximum hum-buzz, and approximately six hundred million square miles of randomly segmented empty rooms to be trapped in. God save you if you hear something wandering around nearby, because it sure as hell has heard you…</p>
-        <button id="continue-btn">continue</button>
-    </div>
+        <div class="dialog-box">
+            <h2>THE BACKROOMS</h2>
+            <p>If you're not careful and no-clip out of reality in wrong areas, you'll end up in the Backrooms, where it's nothing but the stink of moist carpet, the madness of mono-yellow, and endless background noise of fluorescent lights at maximum hum-buzz, and approximately six hundred million square miles of randomly segmented empty rooms to be trapped in. God save you if you hear something wandering around nearby, because it sure as hell has heard you…</p>
+            <button id="continue-btn">continue</button>
+        </div>
     </div>
 
     <!-- Game Screen -->
     <div id="game-screen" class="screen">
-    <div class="dark-area">
-        <h3>need a title</h3>
-        <p>also kinda need flavour text</p>
-        <p>Resources found: ?</p>
-        <button id="get-up-btn">get up</button>
-    </div>
+        <div id="getup-screen" class="dark-area active">
+            <h3>need a title</h3>
+            <p>also kinda need flavour text</p>
+            <p>Resources found: ?</p>
+            <button id="get-up-btn">get up</button>
+        </div>
+
+        <div id="scavenge-screen" class="dark-area">
+            <h3>heyyyy</h3>
+            <p>bonk</p>
+            <p>Resources found: ?</p>
+            <button id="scavenge-btn">scavenge</button>
+        </div>
     </div>
 
 <script src="main.js"></script>
